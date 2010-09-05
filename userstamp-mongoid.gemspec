@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{userstamp}
-  s.version = "2.0.1"
+  s.name = %q{userstamp-mongoid}
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["DeLynn Berry"]
-  s.date = %q{2010-08-09}
-  s.email = %q{delynn@gmail.com}
+  s.authors = ["Michael Saffitz", "DeLynn Berry"]
+  s.date = %q{2010-09-05}
+  s.email = %q{m@saffitz.com}
   s.extra_rdoc_files = [
     "LICENSE"
   ]
@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
      "Readme.rdoc",
      "VERSION",
      "init.rb",
-     "lib/migration_helper.rb",
      "lib/stampable.rb",
      "lib/stamper.rb",
      "lib/userstamp.rb",
@@ -69,33 +68,33 @@ Gem::Specification.new do |s|
      "test/userstamp_test.rb",
      "userstamp.gemspec"
   ]
-  s.homepage = %q{http://github.com/delynn/userstamp}
+  s.homepage = %q{http://github.com/msaffitz/userstamp-mongoid}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{This Rails plugin extends ActiveRecord::Base to add automatic updating of created_by and updated_by attributes of your models in much the same way that the ActiveRecord::Timestamp module updates created_(at/on) and updated_(at/on) attributes.}
   s.test_files = [
-    "test/schema.rb",
-     "test/controllers/userstamp_controller.rb",
-     "test/controllers/users_controller.rb",
+    "test/compatibility_stamping_test.rb",
      "test/controllers/posts_controller.rb",
-     "test/compatibility_stamping_test.rb",
+     "test/controllers/users_controller.rb",
+     "test/controllers/userstamp_controller.rb",
      "test/helper.rb",
-     "test/models/post.rb",
-     "test/models/foo.rb",
      "test/models/comment.rb",
+     "test/models/foo.rb",
      "test/models/person.rb",
+     "test/models/post.rb",
      "test/models/user.rb",
+     "test/schema.rb",
+     "test/stamping_test.rb",
      "test/userstamp_controller_test.rb",
-     "test/userstamp_test.rb",
-     "test/stamping_test.rb"
+     "test/userstamp_test.rb"
   ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
     else
     end
   else
