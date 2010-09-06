@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{userstamp-mongoid}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Saffitz", "DeLynn Berry"]
@@ -31,8 +31,6 @@ Gem::Specification.new do |s|
      "rdoc/classes/Ddb/Controller/Userstamp.html",
      "rdoc/classes/Ddb/Controller/Userstamp/InstanceMethods.html",
      "rdoc/classes/Ddb/Userstamp.html",
-     "rdoc/classes/Ddb/Userstamp/MigrationHelper.html",
-     "rdoc/classes/Ddb/Userstamp/MigrationHelper/InstanceMethods.html",
      "rdoc/classes/Ddb/Userstamp/Stampable.html",
      "rdoc/classes/Ddb/Userstamp/Stampable/ClassMethods.html",
      "rdoc/classes/Ddb/Userstamp/Stamper.html",
@@ -66,13 +64,13 @@ Gem::Specification.new do |s|
      "test/stamping_test.rb",
      "test/userstamp_controller_test.rb",
      "test/userstamp_test.rb",
-     "userstamp.gemspec"
+     "userstamp-mongoid.gemspec"
   ]
   s.homepage = %q{http://github.com/msaffitz/userstamp-mongoid}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{This Rails plugin extends ActiveRecord::Base to add automatic updating of created_by and updated_by attributes of your models in much the same way that the ActiveRecord::Timestamp module updates created_(at/on) and updated_(at/on) attributes.}
+  s.summary = %q{userstamp-mongoid is a port of Userstamp[http://github.com/delynn/userstamp] to the Mongoid[http://mongoid.org/] ORM.  Userstamp adds automatic updating of created_by and updated_by attributes of your models in much the same way that the ActiveRecord::Timestamp module updates created_(at/on) and updated_(at/on) attributes.}
   s.test_files = [
     "test/compatibility_stamping_test.rb",
      "test/controllers/posts_controller.rb",

@@ -23,13 +23,13 @@ end
 
 begin
   require 'jeweler'
-  project_name = 'userstamp'
+  project_name = 'userstamp-mongoid'
   Jeweler::Tasks.new do |gem|
     gem.name = project_name
-    gem.summary = "This Rails plugin extends ActiveRecord::Base to add automatic updating of created_by and updated_by attributes of your models in much the same way that the ActiveRecord::Timestamp module updates created_(at/on) and updated_(at/on) attributes."
-    gem.email = "delynn@gmail.com"
-    gem.homepage = "http://github.com/delynn/#{project_name}"
-    gem.authors = ["DeLynn Berry"]
+    gem.summary = "userstamp-mongoid is a port of Userstamp[http://github.com/delynn/userstamp] to the Mongoid[http://mongoid.org/] ORM.  Userstamp adds automatic updating of created_by and updated_by attributes of your models in much the same way that the ActiveRecord::Timestamp module updates created_(at/on) and updated_(at/on) attributes."
+    gem.email = "m@saffitz.com"
+    gem.homepage = "http://github.com/msaffitz/#{project_name}"
+    gem.authors = ["Michael Saffitz", "DeLynn Berry"]
   end
 
   Jeweler::GemcutterTasks.new
