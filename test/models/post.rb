@@ -1,4 +1,5 @@
-class Post < ActiveRecord::Base
+class Post
+  include Mongoid::Document
   stampable :stamper_class_name => :person, :deleter => true
   has_many :comments
   

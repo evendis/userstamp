@@ -1,3 +1,4 @@
-class User < ActiveRecord::Base
+class User
+  include Mongoid::Document
   model_stamper
 end
