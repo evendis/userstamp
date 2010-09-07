@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Saffitz", "DeLynn Berry"]
-  s.date = %q{2010-09-05}
+  s.date = %q{2010-09-07}
   s.email = %q{m@saffitz.com}
   s.extra_rdoc_files = [
     "LICENSE"
@@ -60,7 +60,6 @@ Gem::Specification.new do |s|
      "test/models/person.rb",
      "test/models/post.rb",
      "test/models/user.rb",
-     "test/schema.rb",
      "test/stamping_test.rb",
      "test/userstamp_controller_test.rb",
      "test/userstamp_test.rb",
@@ -82,7 +81,6 @@ Gem::Specification.new do |s|
      "test/models/person.rb",
      "test/models/post.rb",
      "test/models/user.rb",
-     "test/schema.rb",
      "test/stamping_test.rb",
      "test/userstamp_controller_test.rb",
      "test/userstamp_test.rb"
