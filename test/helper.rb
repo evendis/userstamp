@@ -4,16 +4,10 @@ $LOAD_PATH.unshift('lib')
 
 # load normal stuff
 require 'active_support'
-require 'active_record'
 require 'action_controller'
 require 'init'
 
 # connect to db
-ActiveRecord::Base.establish_connection({
-  :adapter => "sqlite3",
-  :database => ":memory:",
-})
-require 'test/schema'
 
 # load test framework
 require 'test/unit'
