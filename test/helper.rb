@@ -3,11 +3,17 @@ require 'rubygems'
 $LOAD_PATH.unshift('lib')
 
 # load normal stuff
+require 'mongoid'
 require 'active_support'
 require 'action_controller'
 require 'init'
 
 # connect to db
+Mongoid.configure do |config|
+  name = "userstamp_testing"
+  config.master = Mongo::Connection.new.db(name)
+  config.persist_in_safe_mode = false
+end
 
 # load test framework
 require 'test/unit'
