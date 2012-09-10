@@ -85,14 +85,14 @@ module Ddb #:nodoc:
 
           class_eval do
             klass = stamper_class_name.to_s.singularize.camelize
-            referenced_in :creator, :class_name => klass, :foreign_key => creator_attribute
-            referenced_in :updater, :class_name => klass, :foreign_key => updater_attribute
+            belongs_to :creator, :class_name => klass, :foreign_key => creator_attribute
+            belongs_to :updater, :class_name => klass, :foreign_key => updater_attribute
 
             before_save     :set_updater_attribute
             before_create   :set_creator_attribute
 
             if defaults[:deleter]
-              referenced_in :deleter, :class_name => klass, :foreign_key => deleter_attribute
+              belongs_to :deleter, :class_name => klass, :foreign_key => deleter_attribute
               before_destroy  :set_deleter_attribute
             end
           end
