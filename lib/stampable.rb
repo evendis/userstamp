@@ -119,32 +119,31 @@ module Ddb #:nodoc:
       end
 
       module InstanceMethods #:nodoc:
-        private
-          def has_stamper?
-            !self.class.stamper_class.nil? && !self.class.stamper_class.stamper.nil? rescue false
-          end
+        def has_stamper?
+          !self.class.stamper_class.nil? && !self.class.stamper_class.stamper.nil? rescue false
+        end
 
-          def set_creator_attribute
-            return unless self.record_userstamp
-            if respond_to?(self.creator_attribute.to_sym) && has_stamper?
-              self.send("#{self.creator_attribute}=".to_sym, self.class.stamper_class.stamper)
-            end
+        def set_creator_attribute
+          return unless self.record_userstamp
+          if respond_to?(self.creator_attribute.to_sym) && has_stamper?
+            self.send("creator=".to_sym, self.class.stamper_class.stamper)
           end
+        end
 
-          def set_updater_attribute
-            return unless self.record_userstamp
-            if respond_to?(self.updater_attribute.to_sym) && has_stamper?
-              self.send("#{self.updater_attribute}=".to_sym, self.class.stamper_class.stamper)
-            end
+        def set_updater_attribute
+          return unless self.record_userstamp
+          if respond_to?(self.updater_attribute.to_sym) && has_stamper?
+            self.send("updater=".to_sym, self.class.stamper_class.stamper)
           end
+        end
 
-          def set_deleter_attribute
-            return unless self.record_userstamp
-            if respond_to?(self.deleter_attribute.to_sym) && has_stamper?
-              self.send("#{self.deleter_attribute}=".to_sym, self.class.stamper_class.stamper)
-              save
-            end
+        def set_deleter_attribute
+          return unless self.record_userstamp
+          if respond_to?(self.deleter_attribute.to_sym) && has_stamper?
+            self.send("deleter=".to_sym, self.class.stamper_class.stamper)
+            save
           end
+        end
         #end private
       end
     end
